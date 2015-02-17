@@ -50,18 +50,24 @@ public:
         back_error.id_error = -1;
         back_error.text_error = "";
     }
+
     /**
-      Сообщение - "Операция выполнена успешно"
-      */
+     * Сообщение - "Операция выполнена успешно"
+     * @brief MES_NOT_ERROR
+     * @return
+     */
     int MES_NOT_ERROR(){
         back_error.id_error = NOT_ERROR;
         back_error.text_error = "The operation was successful.";
         qDebug() << back_error.text_error;
         return this->NOT_ERROR;
     }
+
     /**
-      Сообщение - "Объект с таким именем уже существует в БД"
-      */
+     * Сообщение - "Объект с таким именем уже существует в БД"
+     * @brief MES_OBJ_EXIST_DATABASE
+     * @return
+     */
     int MES_OBJ_EXIST_DATABASE(){
         back_error.id_error = OBJ_EXIST_DATABASE;
         back_error.text_error =
@@ -69,36 +75,48 @@ public:
         qDebug() << back_error.text_error;
         return this->OBJ_EXIST_DATABASE;
     }
+
     /**
-      Сообщение - "Объект с таким именем не существует в БД"
-      */
+     * Сообщение - "Объект с таким именем не существует в БД"
+     * @brief MES_OBJ_NOT_EXIST_DATABASE
+     * @return
+     */
     int MES_OBJ_NOT_EXIST_DATABASE(){
         back_error.id_error = OBJ_NOT_EXIST_DATABASE;
         back_error.text_error = "ERROR in database: Object with this name don't exist in database.";
         qDebug() << back_error.text_error;
         return this->OBJ_NOT_EXIST_DATABASE;
     }
+
     /**
-      Сообщение - "Некорректный тип"
-      */
+     * Сообщение - "Некорректный тип"
+     * @brief MES_OBJ_INCORRECT_TYPE
+     * @return
+     */
     int MES_OBJ_INCORRECT_TYPE(){
         back_error.id_error = OBJ_INCORRECT_TYPE;
         back_error.text_error = "ERROR in database: Incorrect type.";
         qDebug() << back_error.text_error;
         return this->OBJ_INCORRECT_TYPE;
     }
+
     /**
-      Сообщение - "Некорректное имя"
-      */
+     * Сообщение - "Некорректное имя"
+     * @brief MES_OBJ_INCORRECT_NAME
+     * @return
+     */
     int MES_OBJ_INCORRECT_NAME(){
         back_error.id_error = OBJ_INCORRECT_NAME;
         back_error.text_error = "ERROR in database: Incorrect name.";
         qDebug() << back_error.text_error;
         return this->OBJ_INCORRECT_NAME ;
     }
+
     /**
-      Сообщение - "Объект с таким именем существует в объекте"
-      */
+     * Сообщение - "Объект с таким именем существует в объекте"
+     * @brief MES_OBJ_EXIST_OBJECT
+     * @return
+     */
     int MES_OBJ_EXIST_OBJECT(){
         back_error.id_error = OBJ_EXIST_OBJECT;
         back_error.text_error =
@@ -106,9 +124,12 @@ public:
         qDebug() << back_error.text_error;
         return this->OBJ_EXIST_OBJECT;
     }
+
     /**
-      Сообщение - "Объект с таким именем не существует в объекте"
-      */
+     * Сообщение - "Объект с таким именем не существует в объекте"
+     * @brief MES_OBJ_NOT_EXIST_OBJECT
+     * @return
+     */
     int MES_OBJ_NOT_EXIST_OBJECT(){
         back_error.id_error = OBJ_NOT_EXIST_OBJECT;
         back_error.text_error =
@@ -116,9 +137,15 @@ public:
         qDebug() << back_error.text_error;
         return this->OBJ_NOT_EXIST_OBJECT;
     }
+
     /**
-      Сообщение - "Ячейка с координатами [x,y,z] свободна"
-      */
+     * Сообщение - "Ячейка с координатами [x,y,z] свободна"
+     * @brief MES_MAP_NOT_OBJECT
+     * @param x
+     * @param y
+     * @param z
+     * @return
+     */
     int MES_MAP_NOT_OBJECT(int x, int y, int z){
         back_error.id_error = MAP_NOT_OBJECT;
         std::stringstream out;
@@ -129,9 +156,15 @@ public:
         qDebug() << back_error.text_error;
         return this->MAP_NOT_OBJECT ;
     }
+
     /**
-      Сообщение - "Ячейка с координатами [x,y,z] занята"
-      */
+     * Сообщение - "Ячейка с координатами [x,y,z] занята"
+     * @brief MES_MAP_YES_OBJECT
+     * @param x
+     * @param y
+     * @param z
+     * @return
+     */
     int MES_MAP_YES_OBJECT(int x, int y, int z){
         back_error.id_error = MAP_YES_OBJECT;
         std::stringstream out;
@@ -143,9 +176,12 @@ public:
         qDebug() << back_error.text_error;
         return this->MAP_YES_OBJECT;
     }
+
     /**
-      Сообщение - "Неккоректный тип. Ожидался BuildObject(типы 1,2,3,4,6)"
-      */
+     * Сообщение - "Неккоректный тип. Ожидался BuildObject(типы 1,2,3,4,6)"
+     * @brief MES_MAP_BUILD_OBJECT
+     * @return
+     */
     int MES_MAP_BUILD_OBJECT(){
         back_error.id_error = MAP_BUILD_OBJECT;
         back_error.text_error =
@@ -154,18 +190,24 @@ public:
         qDebug() << back_error.text_error;
         return this->MAP_BUILD_OBJECT;
     }
+
     /**
-      Сообщение - "Файл с таким именем уже существует"
-      */
+     * Сообщение - "Файл с таким именем уже существует"
+     * @brief MES_MAP_EXIST_FILE
+     * @return
+     */
     int MES_MAP_EXIST_FILE(){
         back_error.id_error = MAP_EXIST_FILE;
         back_error.text_error = "ERROR in map: File with this name is exist.";
         qDebug() << back_error.text_error;
         return MAP_EXIST_FILE;
     }
+
     /**
-      Сообщение - "Файла с таким именем не существует"
-      */
+     * Сообщение - "Файла с таким именем не существует"
+     * @brief MES_MAP_NOT_EXIST_FILE
+     * @return
+     */
     int MES_MAP_NOT_EXIST_FILE(){
         back_error.id_error = MAP_NOT_EXIST_FILE;
         back_error.text_error =
@@ -173,27 +215,36 @@ public:
         qDebug() << back_error.text_error;
         return MAP_NOT_EXIST_FILE;
     }
+
     /**
-      Сообщение - "Этот файл уже выбран"
-      */
+     * Сообщение - "Этот файл уже выбран"
+     * @brief MES_MAP_FILE_SELECT
+     * @return
+     */
     int MES_MAP_FILE_SELECT(){
         back_error.id_error = MAP_FILE_SELECT;
         back_error.text_error = "ERROR in map: It file is selected now.";
         qDebug() << back_error.text_error;
         return MAP_FILE_SELECT;
     }
+
     /**
-      Сообщение - "Вы не выбрали файл"
-      */
+     * Сообщение - "Вы не выбрали файл"
+     * @brief MES_MAP_FILE_NOT_SELECT
+     * @return
+     */
     int MES_MAP_FILE_NOT_SELECT(){
         back_error.id_error = MAP_FILE_NOT_SELECT;
         back_error.text_error = "ERROR in map: You are not select file";
         qDebug() << back_error.text_error;
         return MAP_FILE_NOT_SELECT;
     }
+
     /**
-      Сообщение - "БД пуста"
-      */
+     * Сообщение - "БД пуста"
+     * @brief MES_BD_CLEAR
+     * @return
+     */
     int MES_BD_CLEAR(){
         back_error.id_error = BD_CLEAR;
         back_error.text_error = "ERROR in BD: DataBase is clear.";
